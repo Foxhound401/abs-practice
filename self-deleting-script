@@ -1,0 +1,10 @@
+#!/bin/rm
+# Self-deleting scripts.
+
+# Nothing much seems to happen when you run this... excep that the file disdappears.
+
+WHATEVER=85
+
+echo "This line will never print."
+
+exit $WHATEVER
