@@ -1,0 +1,25 @@
+#!/bin/bash
+
+ABS_DIR=/home/brody/abs-practice
+ROOT_UID=0
+E_XCD=86
+E_NONROOT=87
+
+if [ "$UID" -ne "$ROOT_UID" ]
+then
+	echo "Must be root to run this script."
+	exit $E_NONROOT
+fi
+
+cd $ABS_DIR
+
+if [ "$PWD" != "$ABS_DIR" ]
+then
+	echo "Can't change to $ABS_DIR"
+	exit $E_XCD
+else
+	chmod -R +x $ABS_DIR
+	echo "Execute permission granted!"
+fi
+
+exit 0
